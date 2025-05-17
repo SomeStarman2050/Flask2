@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Color Codes</title>
+        <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}">
+    </head>
+    <body>
+        <section class="centered">
+            <form> action="/hex_form" method="POST">
+                <label for="color">Enter a color name:</label>
+                <input type="text" id="color" name="color">
+                <button type="submit">Submit</button>
+                <h2>Hex Color Codes</h2>
+                <p>Rules:</p>
+                <ul>
+                    <li>The code must begin with the "#" symbol.</li>
+                    <li>6 characters follow the "#".</li>
+                    <li>Only use 0-9 and A-F for the characters.</li>
+                    <li>Each pair of characters controls the amount of red, green, or
+                        blue in the color mix.</li>
+                </ul>
+                <p class="feedback">{{feedback}}</p>
+                <hr>
+                <label>Enter a code: #<input type="text" name="hex" value="{{hex}}" required/></label><br>
+                <input type="color" value="#{{hex}}" disabled/>
+                <button>Check Hex Code</button>
+                <hr>
+                <img src=""{{url_for('static', filename='hex_figure.png')}}"" alt="Hex code for red." width="100%"/>
+            </form>
+        </section>
+    </body>
+</html>
+
+<!-- TODO: Add action and method attributes to the form tag. -->
+<!-- TODO: Replace the stylesheet and image URLs with the url_for function. -->
+<!-- TODO: Replace the feedback text with a placeholder. -->
+<!-- TODO: Use placeholders instead of hard-coded hex values. -->
